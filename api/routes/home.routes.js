@@ -1,12 +1,13 @@
 const express = require('express');
+const HomeServices = require('../services/home.services');
 
 const router = express.Router();
+const homeServices = new HomeServices();
 
 router
-  .get('/', (req, res) => {
-    res.json({
-      pages: 'Api home',
-    });
+  .get('/', async (req, res) => {
+    const data = await homeServices.find();
+    res.json(data);
   })
 
   .post('/', (req, res) => {
