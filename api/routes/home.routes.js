@@ -4,6 +4,13 @@ const HomeServices = require('../services/home.services');
 const router = express.Router();
 const homeServices = new HomeServices();
 
+const body = [
+  {
+    total: 1,
+    results: 'Skyneta',
+  },
+];
+
 router
   .get('/', async (req, res) => {
     const data = await homeServices.find();
@@ -11,9 +18,8 @@ router
   })
 
   .post('/', (req, res) => {
-    res.json({
-      data: [],
-    });
+    console.log({ req });
+    res.json(body);
   });
 
 module.exports = router;
