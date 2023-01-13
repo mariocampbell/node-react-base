@@ -11,7 +11,6 @@ router
   })
 
   .post('/', (req, res) => {
-    console.log('request', req);
     res.json({
       data: [],
     });
