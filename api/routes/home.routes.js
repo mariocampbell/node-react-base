@@ -7,7 +7,10 @@ const homeServices = new HomeServices();
 const body = [
   {
     total: 1,
-    results: 'Skyneta',
+    results: [{
+      id: 1,
+      team: 'Skyneta',
+    }],
   },
 ];
 
